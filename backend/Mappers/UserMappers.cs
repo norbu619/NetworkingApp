@@ -23,5 +23,19 @@ namespace backend.Mappers
                 Role = user.Role
             };
         }
+        public static Models.User ToUser(this CreateUserDto createUserDto)
+        {
+            if (createUserDto == null) return null;
+
+            return new Models.User
+            {
+                Username = createUserDto.Username,
+                Email = createUserDto.Email,
+                FirstName = createUserDto.FirstName,
+                LastName = createUserDto.LastName,
+                DateOfBirth = createUserDto.DateOfBirth,
+                Role = createUserDto.Role
+            };
+        }
     }
 }
